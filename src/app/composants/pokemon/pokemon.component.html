@@ -1,1 +1,16 @@
-<p>pokemon works!</p>
+<div class="pokemon">
+  <mat-card class="pokemon-card">
+    <mat-card-title-group>
+      <mat-card-title>{{ pokemon.nom }}</mat-card-title>
+      <img mat-card-sm-image src="{{pokemon.img}}" >
+    </mat-card-title-group>
+    <mat-card-content>
+      <li>Catégorie : {{ pokemon.categorie }}</li>
+      <li>Type: {{ pokemon.type }}</li>
+      <li>Taille : {{ pokemon.taille }} m</li>
+      <li>Poids: {{ pokemon.poids }} kg</li>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

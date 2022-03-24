@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Pokemon} from "../../modele/Pokemon";
+import {PokemonService} from "../../services/pokemon.service";
 
 @Component({
   selector: 'app-pokemons',
@@ -8,12 +9,10 @@ import {Pokemon} from "../../modele/Pokemon";
 })
 export class PokemonsComponent implements OnInit {
 
-  pokemons: Pokemon[];
+  public pokemons : Pokemon[];
 
-  constructor() {
-    this.pokemons = [];
-    let pokemon1 = new Pokemon("Bulbizarre", "", "Graine", 'plante, poison', 0.6, 6.9 );
-    this.pokemons.push(pokemon1);
+  constructor(@Inject(PokemonService) private svc:PokemonService) {
+  this.pokemons = this.svc.pokemons;
   }
 
   ngOnInit(): void {
